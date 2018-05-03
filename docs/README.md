@@ -3,7 +3,6 @@
 O DNA Variant Report é um software livre escrito em Python 3.5.x que permite, com poucos cliques,
 gerar um relatório de todas as variantes encontradas em uma amostra de DNA que já foram catalogadas
 no site ClinVar.
-
 Além de correlacionar as variantes de uma pessoa com a base de dados, é possível fazer diversas
 buscas por informações importantes, seja diretamente um fenótipo (doenças), ou por significância clínica.
 As opções de significância clínica são:
@@ -16,7 +15,7 @@ As opções de significância clínica são:
 6. Outros
 
 Para efetuar essa busca, o software necessita que seja baixada a base de dados do site do
-[ClinVar](ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/), mais especificamente, o arquivo separado
+[ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/docs/maintenance_use/), mais especificamente, o arquivo separado
 por tabulação **variant_summary.txt.gz**. De posse da base de dados, mais um arquivo **VCF**
 (resultante de um exame de DNA), é possível efetuar as buscas.
 
@@ -27,7 +26,7 @@ Para executar tais operações, o programa utiliza as bibliotecas:
 3. [PyVCF](http://pyvcf.readthedocs.io/)
 
 Tendo sido feitas as buscas necessárias, e aplicados os filtros definidos pelo usuário, é possível
-salvar o relatório em formato XLS, utilizando a bilioteca [xlwt](https://pypi.org/project/xlwt/).
+salvar o relatório em formato XLS, utilizando a biblioteca [xlwt](https://pypi.org/project/xlwt/).
 
 #### Instalação
 
@@ -43,14 +42,13 @@ Caso deseje poder exportar os relatórios, é necessário também instalar o **x
 
 Finalmente, dê permissão de execução para o programa com o comando (estando na mesma pasta do programa):
 
-    chmod +x variantreport.py
+    chmod +x dnavariantreport.py
 
 ##### Uso
 
 Ao abrir o programa, o usuário possui poucas opções na tela:
 
 ![Tela inicial](docs/images/im1.png)
-
 
 Assim, antes de utilizar o programa de fato, é necessário primeiro carregar os dados:
 
@@ -59,27 +57,24 @@ Assim, antes de utilizar o programa de fato, é necessário primeiro carregar os
 
 ![Tela inicial](docs/images/im2.png)
 
-
 Após a escolha do VCF, o programa pode demorar alguns instantes para ler todos os dados, isso é normal.
 
 ![Tela inicial](docs/images/im3.png)
 
-
 Finalizada a leitura, o programa já terá isolado as variantes do VCF com as variantes registradas no ClinVar.
-Nesse momento aparecerão algumas opções serão exibida na tela:
+Nesse momento algumas opções serão exibidas na tela:
 
 * Filtros: permitindo fazer algumas buscas específicas sobre doenças ou baseado em significância clínica
 * Gráfico de significância: Exibe as porcentagens (para aquele filtro aplicado), e um gráfico de pizza
 
 ![Tela inicial](docs/images/im4.png)
 
-
 Os filtros são cumulativos, então caso deseje fazer outra busca, é necessário clicar no botão *Limpar Filtros*.
 Com os devidos filtros aplicados, finalmente é possível exportar o relatório (caso tenha sido instalada a
 biblioteca *xlwt*).
 
 Para as próximas sessões, o programa iniciará já com a base e o último VCF pré carregado. Caso deseje
-analizar outra amostra, basta repetir o passo de importar VCF (idem para quando for baixar uma versão
+analisar outra amostra, basta repetir o passo de importar VCF (idem para quando for baixar uma versão
 atualizada da base de dados).
 
 ##### Sistemas Microsoft Windows
